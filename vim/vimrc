@@ -1,0 +1,44 @@
+" vim conf - Pierre Tachoire
+" inspired by Vincent Jousse
+
+call pathogen#infect()	" enable pathogen
+set nocompatible	" remove vi compat
+set title		" update term title
+"set number		" add line number
+set ruler		" show cursor pos
+"set wrap		
+set scrolloff=3		" lines around scroll
+set ignorecase		" search ignore case
+set smartcase		" search case sensitive if caps char used
+set incsearch		" highlight search results while typing
+set hlsearch		" highlight search results
+set visualbell		" remove beeps
+set noerrorbells	" remove beeps
+set hidden		" hide file while opening other files
+
+" backspace as usual
+set backspace=indent,eol,start	
+
+syntax enable
+
+filetype on
+filetype plugin on
+filetype indent on
+
+" enable solarized
+set background=light
+colorscheme base16-tomorrow
+
+" Desactiver les touches directionnelles
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" ;; as esc
+map ;; <esc>
+imap ;; <esc>
