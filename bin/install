@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+CURRENT=`pwd`
+
+set -e
+
+git submodule update --init
+
+if [ -L ~/.vimrc ] ; then
+    rm -rf ~/.vimrc
+fi
+
+if [ -L ~/.vim ] ; then
+   rm -rf ~/.vim
+fi
+
+ln -s $CURRENT/vim/vim ~/.vim
+ln -s $CURRENT/vim/vimrc ~/.vimrc
+
+printf "\r\033[2K  [ \033[00;32mOK\033[0m ] vim config installed\n"
+
+if [ -L ~/.gitconfig ] ; then
+    rm -rf ~/.gitconfig
+fi
+
+ln -s $CURRENT/git/gitconfig ~/.gitconfig
+
+if [ -L ~/.gitignore ] ; then
+    rm -rf ~/.gitignore
+fi
+
+ln -s $CURRENT/git/gitignore ~/.gitignore
+
+printf "\r\033[2K  [ \033[00;32mOK\033[0m ] git config installed\n"
+
+if [ -L ~/.bashrc ] ; then
+    rm -rf ~/.bashrc
+fi
+
+ln -s $CURRENT/shell/bashrc ~/.bashrc
+
+if [ -L ~/.bash_prompt ] ; then
+    rm -rf ~/.bash_prompt
+fi
+
+ln -s $CURRENT/shell/bash_prompt ~/.bash_prompt
+
+printf "\r\033[2K  [ \033[00;32mOK\033[0m ] shell config installed\n"
