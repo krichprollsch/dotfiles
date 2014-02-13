@@ -65,6 +65,9 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.exe$\|\.so$\|\.dll$' }
 
+" Ctags
+set tags=./tags;/,~/.vimtags,tags,vendor.tags
+
 " PIV
 let g:DisableAutoPHPFolding = 1
 let g:PIVAutoClose = 0
