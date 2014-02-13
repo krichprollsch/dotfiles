@@ -16,3 +16,6 @@
 [submodule "vim/vim/bundle/symfony"]
 	path = vim/vim/bundle/symfony
 	url = https://github.com/docteurklein/vim-symfony.git
+[submodule "vim/vim/bundle/ack.vim"]
+	path = vim/vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
