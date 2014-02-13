@@ -61,6 +61,10 @@ set softtabstop=4
 " ctrlp
 let g:ctrlp_map                 = '<leader>t'
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$' }
+
 " PIV
 let g:DisableAutoPHPFolding = 1
 let g:PIVAutoClose = 0
