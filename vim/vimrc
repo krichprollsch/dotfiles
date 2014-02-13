@@ -65,6 +65,10 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.exe$\|\.so$\|\.dll$' }
 
+" Syntastic
+let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
+let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
+
 " Ctags
 set tags=./tags;/,~/.vimtags,tags,vendor.tags
 
