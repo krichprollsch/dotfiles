@@ -31,3 +31,6 @@
 [submodule "vim/vim/bundle/supertab"]
 	path = vim/vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "vim/vim/bundle/vim-php-namespace"]
+	path = vim/vim/bundle/vim-php-namespace
+	url = https://github.com/arnaud-lb/vim-php-namespace.git
