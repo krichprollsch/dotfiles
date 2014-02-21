@@ -63,9 +63,10 @@ let mapleader = ","
 set gdefault
 
 " Tabs and indentation
+set smartindent
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set expandtab
 
 " ctrlp
 let g:ctrlp_map                 = '<leader>t'
