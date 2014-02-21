@@ -36,6 +36,10 @@ highlight ColorColumn ctermfg=DarkGreen
 let &colorcolumn=join(range(81,999),",")
 "let &colorcolumn="80,".join(range(120,999),",")
 
+" add new line without insert mode on enter
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
 " Desactiver les touches directionnelles
 map <up> <nop>
 map <down> <nop>
