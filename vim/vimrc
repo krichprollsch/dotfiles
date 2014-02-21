@@ -67,7 +67,7 @@ set softtabstop=4
 let g:ctrlp_map                 = '<leader>t'
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache\|node_modules',
     \ 'file': '\.exe$\|\.so$\|\.dll$' }
 
 " Syntastic
