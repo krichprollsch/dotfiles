@@ -46,3 +46,11 @@ fi
 ln -s $CURRENT/shell/bash_prompt ~/.bash_prompt
 
 printf "\r\033[2K  [ \033[00;32mOK\033[0m ] shell config installed\n"
+
+if [ -L ~/.tmux.conf ] ; then
+    rm -rf ~/.tmux.conf
+fi
+
+ln -s $CURRENT/tmux/tmux.conf ~/.tmux.conf
+
+printf "\r\033[2K  [ \033[00;32mOK\033[0m ] tmux config installed\n"
