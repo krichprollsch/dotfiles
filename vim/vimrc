@@ -78,6 +78,8 @@ let g:ctrlp_custom_ignore = {
 " Syntastic
 let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
 let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
 
 " Ctags
 set tags=./tags;/,~/.vimtags,tags,vendor.tags
