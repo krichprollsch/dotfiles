@@ -34,3 +34,6 @@
 [submodule "vim/vim/bundle/vim-php-namespace"]
 	path = vim/vim/bundle/vim-php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
