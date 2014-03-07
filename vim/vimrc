@@ -87,3 +87,6 @@ set tags=./tags;/,~/.vimtags,tags,vendor.tags
 " PIV
 let g:DisableAutoPHPFolding = 1
 let g:PIVAutoClose = 0
+
+" F5 removes endline spaces
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
