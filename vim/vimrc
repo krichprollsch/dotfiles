@@ -32,7 +32,7 @@ filetype indent on
 set background=light
 colorscheme base16-tomorrow
 
-highlight ColorColumn ctermfg=DarkGreen
+highlight ColorColumn ctermfg=DarkGray
 let &colorcolumn=join(range(81,999),",")
 "let &colorcolumn="80,".join(range(120,999),",")
 
