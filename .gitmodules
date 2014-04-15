@@ -40,3 +40,6 @@
 [submodule "vim/vim/bundle/vim-git-log"]
 	path = vim/vim/bundle/vim-git-log
 	url = https://github.com/kablamo/vim-git-log
+[submodule "vim/vim/bundle/visual-increment"]
+	path = vim/vim/bundle/visual-increment
+	url = https://github.com/vim-scripts/visual-increment
