@@ -59,6 +59,9 @@ set lazyredraw
 
 let mapleader = ","
 
+" disable parent hightlight
+let g:loaded_matchparen= 1
+
 " always replace all occurences of a line
 set gdefault
 
