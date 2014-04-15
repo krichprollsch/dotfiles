@@ -113,6 +113,8 @@ phptags () {
         --exclude="cache"                            \
         --exclude="log"                              \
         --exclude="node_modules"                     \
+        --exclude="*\.phar"                          \
+        --exclude="*\.js"                            \
         --totals=yes                                 \
         --tag-relative=yes                           \
         --PHP-kinds=+cf                              \
@@ -130,6 +132,8 @@ srctags () {
         --exclude="log"                              \
         --exclude="node_modules"                     \
         --exclude="vendor"                           \
+        --exclude="*\.phar"                          \
+        --exclude="*\.js"                            \
         --totals=yes                                 \
         --tag-relative=yes                           \
         --PHP-kinds=+cf                              \
@@ -142,6 +146,8 @@ vendortags () {
     ctags-exuberant -h ".php" -R                     \
         -f vendor.tags                               \
         --exclude="\.git"                            \
+        --exclude="*\.phar"                          \
+        --exclude="*\.js"                            \
         --exclude="*Test*"                           \
         --totals=yes                                 \
         --tag-relative=yes                           \

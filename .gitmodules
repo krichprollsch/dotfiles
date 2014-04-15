@@ -37,3 +37,6 @@
 [submodule "vim/vim/bundle/vim-surround"]
 	path = vim/vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/vim-git-log"]
+	path = vim/vim/bundle/vim-git-log
+	url = https://github.com/kablamo/vim-git-log
