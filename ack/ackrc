@@ -1,2 +1,5 @@
 --type-set
 twig=.twig
+
+--type-set
+yml=.yml
