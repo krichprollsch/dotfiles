@@ -94,3 +94,6 @@ let g:PIVAutoClose = 0
 
 " F5 removes endline spaces
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" airline
+set laststatus=2
