@@ -14,7 +14,7 @@
 	editor = vi
 	excludesfile = ~/.gitignore
 [alias]
-	slog = log --all --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)    %an%Creset' --abbrev-commit
+	slog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)    %an%Creset' --abbrev-commit
 	lg = log --name-only
 	ffm = merge --ff-only
 	noffm = merge --no-ff
