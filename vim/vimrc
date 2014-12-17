@@ -36,10 +36,6 @@ highlight ColorColumn ctermfg=DarkGray
 let &colorcolumn=join(range(81,999),",")
 "let &colorcolumn="80,".join(range(120,999),",")
 
-" add new line without insert mode on enter
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-
 " Desactiver les touches directionnelles
 map <up> <nop>
 map <down> <nop>
@@ -76,8 +72,9 @@ let g:ctrlp_map                 = '<leader>t'
 let g:ctrlp_max_files           = 100000
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache\|node_modules',
-    \ 'file': '\.exe$\|\.so$\|\.dll$' }
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache\|node_modules|\.idea|cache',
+    \ 'file': '\.exe$\|\.so$\|\.dll|tags|\.ctrlp$' }
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " Syntastic
 let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
