@@ -21,7 +21,7 @@
     drop = !sh -c 'git branch -d $2 && git push $1 :${2}' -
     ffdrop = !sh -c 'git ffm $2 && git push $1 master && git drop $1 $2' -
     noffdrop = !sh -c 'git noffm $2 && git push $1 master && git drop $1 $2' -
-    rbpush = !sh -c 'git fetch $1 && git checkout $2 && git rebase master && git push -f $1 $2 && git checkout master' -
+    rbpush = !sh -c 'git fetch $1 && git checkout $2 && git pull $1 $2 && git rebase master && git push -f $1 $2 && git checkout master' -
     fpush = !sh -c 'git push -f $1 $2' -
 [diff]
 	tool = vimdiff
