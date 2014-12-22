@@ -161,3 +161,6 @@ vendortags () {
 
 # EDITOR
 export EDITOR='vim'
+
+# disable caps_lock
+setxkbmap -option caps:none
