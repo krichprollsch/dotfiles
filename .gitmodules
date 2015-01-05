@@ -19,18 +19,9 @@
 [submodule "vim/vim/bundle/ack.vim"]
 	path = vim/vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/vim/bundle/PIV"]
-	path = vim/vim/bundle/PIV
-	url = https://github.com/spf13/PIV.git
 [submodule "vim/vim/bundle/syntastic"]
 	path = vim/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "vim/vim/bundle/phpcomplete.vim"]
-	path = vim/vim/bundle/phpcomplete.vim
-	url = git://github.com/shawncplus/phpcomplete.vim.git
-[submodule "vim/vim/bundle/supertab"]
-	path = vim/vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
 [submodule "vim/vim/bundle/vim-php-namespace"]
 	path = vim/vim/bundle/vim-php-namespace
 	url = https://github.com/arnaud-lb/vim-php-namespace.git
@@ -61,3 +52,6 @@
 [submodule "vim/vim/bundle/vim-php-cs-fixer"]
 	path = vim/vim/bundle/vim-php-cs-fixer
 	url = git@github.com:stephpy/vim-php-cs-fixer.git
+[submodule "vim/vim/bundle/neocomplete.vim"]
+	path = vim/vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
