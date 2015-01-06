@@ -55,3 +55,9 @@
 [submodule "vim/vim/bundle/neocomplete.vim"]
 	path = vim/vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/vim/bundle/vim-repeat"]
+	path = vim/vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/vim/bundle/vim-commentary"]
+	path = vim/vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
