@@ -16,6 +16,7 @@
 [alias]
 	slog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)    %an%Creset' --abbrev-commit
 	lg = log --name-only
+	st = status
 	ffm = merge --ff-only
 	noffm = merge --no-ff
     drop = !sh -c 'git branch -d $2 && git push $1 :${2}' -
