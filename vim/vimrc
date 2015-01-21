@@ -145,3 +145,6 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" nerdtree
+nmap <F7> :NERDTreeToggle<CR>
