@@ -78,9 +78,10 @@ let g:ctrlp_root_markers = ['.ctrlp']
 
 " Syntastic
 let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
-let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
+"let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Ctags
 set tags=./tags;/,~/.vimtags,tags,vendor.tags
@@ -148,3 +149,9 @@ nmap <F8> :TagbarToggle<CR>
 
 " nerdtree
 nmap <F7> :NERDTreeToggle<CR>
+
+" jsbeautifier
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
