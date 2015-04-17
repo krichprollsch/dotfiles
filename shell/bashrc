@@ -164,5 +164,9 @@ vendortags () {
 # EDITOR
 export EDITOR='vim'
 
+# go
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+
 # disable caps_lock
 setxkbmap -option caps:none

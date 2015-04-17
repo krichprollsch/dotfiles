@@ -73,3 +73,6 @@
 [submodule "vim/vim/bundle/vim-jsbeautify"]
 	path = vim/vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
+[submodule "vim/vim/bundle/vim-go"]
+	path = vim/vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
