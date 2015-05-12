@@ -164,6 +164,9 @@ vendortags () {
 # EDITOR
 export EDITOR='vim'
 
+# bin
+export PATH=$PATH:$HOME/.bin
+
 # go
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
