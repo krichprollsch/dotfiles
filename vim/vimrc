@@ -20,21 +20,17 @@ set nowritebackup
 set noswapfile
 
 " backspace as usual
-set backspace=indent,eol,start	
+set backspace=indent,eol,start
 
 syntax enable
+set background=dark
 
 filetype on
 filetype plugin on
 filetype indent on
 
-" enable solarized
-set background=light
-colorscheme base16-tomorrow
-
-highlight ColorColumn ctermfg=DarkGray
-let &colorcolumn=join(range(81,999),",")
-"let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn=join(range(81,81),",")
 
 " Desactiver les touches directionnelles
 map <up> <nop>
