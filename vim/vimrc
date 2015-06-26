@@ -6,7 +6,7 @@ set nocompatible	" remove vi compat
 set title		" update term title
 "set number		" add line number
 set ruler		" show cursor pos
-"set wrap		
+"set wrap
 set scrolloff=3		" lines around scroll
 set ignorecase		" search ignore case
 set smartcase		" search case sensitive if caps char used
@@ -76,7 +76,7 @@ let g:ctrlp_root_markers = ['.ctrlp']
 let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
 "let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
 let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2"
+let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2 --tab-width=0"
 let g:syntastic_javascript_checkers = ['jshint']
 
 " Ctags
@@ -151,3 +151,21 @@ map <c-f> :call JsBeautify()<cr>
 autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+" ack
+nmap <leader>a :Ack<space>
+
+" start a substitute
+map <leader>s :%Subvert/
+
+" sudo to write
+command W w !sudo tee % > /dev/null
+
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+" F2 = toggle paste mode
+nnoremap <F2> :set invpaste paste?<Enter>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
+
+" automatically strip trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
