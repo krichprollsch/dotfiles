@@ -3,3 +3,4 @@ vim/vim/.netrwhist
 tags
 vendor.tags
 .ctrlp
+*.orig
