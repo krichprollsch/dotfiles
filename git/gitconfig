@@ -27,3 +27,5 @@
     fpush = !sh -c 'git push -f $1 $2' -
 [diff]
 	tool = vimdiff
+[pull]
+	rebase = preserve
