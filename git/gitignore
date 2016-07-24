@@ -4,3 +4,4 @@ tags
 vendor.tags
 .ctrlp
 *.orig
+core
