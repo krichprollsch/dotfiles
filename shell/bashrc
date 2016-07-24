@@ -173,3 +173,8 @@ export PATH=$PATH:$GOROOT/bin
 
 # disable caps_lock
 setxkbmap -option caps:none
+
+# blackfire
+if [ -f ~/.blackfire ]; then
+    . ~/.blackfire
+fi
