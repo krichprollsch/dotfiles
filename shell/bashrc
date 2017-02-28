@@ -175,3 +175,5 @@ setxkbmap -option caps:none
 if [ -f ~/.blackfire ]; then
     . ~/.blackfire
 fi
+
+export PATH=$PATH:$HOME/.composer/vendor/bin
