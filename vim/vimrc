@@ -1,7 +1,6 @@
 " vim conf - Pierre Tachoire
 " inspired by Vincent Jousse
 
-call pathogen#infect()	" enable pathogen
 set nocompatible	" remove vi compat
 set title		" update term title
 "set number		" add line number
@@ -42,10 +41,6 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" ;; as esc
-map ;; <esc>
-imap ;; <esc>
-
 " make plugins smoother
 set lazyredraw
 
@@ -63,24 +58,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" ctrlp
-let g:ctrlp_map                 = '<leader>t'
-" let g:ctrlp_max_files           = 100000
-let g:ctrlp_clear_cache_on_exit = 0
-" let g:ctrlp_custom_ignore = {
-"     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|cache\|node_modules|\.idea|cache',
-"     \ 'file': '\.exe$\|\.so$\|\.dll|tags|\.ctrlp$' }
-let g:ctrlp_root_markers = ['.ctrlp']
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -U -i --nocolor --nogroup --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore "**/*.pyc"
-      \ -g ""'
+autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType js         setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" load plugins
+source ~/.vimrc.bundles
 
 " Syntastic
 let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
@@ -99,9 +83,6 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " go
 let g:go_list_type = "quickfix"
 
-" Ctags
-set tags=./tags;/,~/.vimtags,tags,vendor.tags
-
 " F5 removes endline spaces
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
@@ -109,7 +90,51 @@ set tags=./tags;/,~/.vimtags,tags,vendor.tags
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" nerdtree
+nmap <F7> :NERDTreeToggle<CR>
+
+" ack
+nmap <leader>a :Ack<space>
+
+" start a substitute
+map <leader>s :%Subvert/
+
+" sudo to write
+command W w !sudo tee % > /dev/null
+
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+" F2 = toggle paste mode
+nnoremap <F2> :set invpaste paste?<Enter>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
+
+" automatically strip trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" php syntax
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+" Ack with ag
+" see https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
+let g:ackprg = 'ag --vimgrep --smart-case'
+
+" fzf
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+nnoremap <silent> <c-p> :FZF<CR>
+
 " neocomplete
+set completeopt-=preview
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
@@ -159,52 +184,3 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
 let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" nerdtree
-nmap <F7> :NERDTreeToggle<CR>
-
-" jsbeautifier
-map <c-f> :call JsBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
-
-" ack
-nmap <leader>a :Ack<space>
-
-" start a substitute
-map <leader>s :%Subvert/
-
-" sudo to write
-command W w !sudo tee % > /dev/null
-
-" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
-" F2 = toggle paste mode
-nnoremap <F2> :set invpaste paste?<Enter>
-imap <F2> <C-O><F2>
-set pastetoggle=<F2>
-
-" automatically strip trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
-
-" php syntax
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
-
-" Ack with ag
-" see https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-let g:ackprg = 'ag --vimgrep --smart-case'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
