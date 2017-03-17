@@ -41,6 +41,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'shawncplus/phpcomplete.vim'
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'fatih/vim-go'
+    Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
 
     " Misc {
         Plug 'tpope/vim-markdown'
