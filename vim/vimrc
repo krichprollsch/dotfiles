@@ -62,6 +62,9 @@ autocmd FileType cucumber   setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType less       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css        setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType js         setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType yml        setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType features   setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " load plugins
 source ~/.vimrc.bundles
