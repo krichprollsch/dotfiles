@@ -33,16 +33,15 @@ call plug#begin('~/.vim/plugged')
 
 " } Prog {
     Plug 'vim-syntastic/syntastic'
-    Plug 'Shougo/neocomplete'
     Plug 'scrooloose/nerdcommenter'
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     Plug 'StanAngeloff/php.vim'
     Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'shawncplus/phpcomplete.vim'
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'fatih/vim-go'
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
+    Plug 'phpactor/phpactor', {'do': 'composer install --no-dev', 'for': 'php'}
 
     " Misc {
         Plug 'tpope/vim-markdown'
