@@ -94,7 +94,12 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 
 " tagbar
-nmap <F8> :TagbarToggle<CR>
+" nmap <F8> :TagbarToggle<CR>
+
+" lightline
+let g:lightline = { 'colorscheme': 'solarized', }               "vim-lightline
+set laststatus=2                                                "vim-lightline
+set noshowmode                                                  "vim-lightline
 
 " nerdtree
 nmap <F7> :NERDTreeToggle<CR>
