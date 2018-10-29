@@ -42,6 +42,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'fatih/vim-go'
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
     Plug 'phpactor/phpactor', {'do': 'composer install --no-dev', 'for': 'php'}
+    Plug 'phpstan/vim-phpstan'
 
     " Misc {
         Plug 'tpope/vim-markdown'
