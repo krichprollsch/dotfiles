@@ -85,6 +85,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " go
 let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
 
 " F5 removes endline spaces
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
