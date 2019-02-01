@@ -58,7 +58,7 @@ function set_git_branch {
   fi
 
   # Set the final branch string.
-  BRANCH="${LIGHT_GRAY}on ${GREEN}${branch}${state}${remote}${COLOR_NONE}"
+  BRANCH=" ${LIGHT_GRAY}on ${GREEN}${branch}${state}${remote}${COLOR_NONE}"
 }
 
 
@@ -81,11 +81,21 @@ function truncate_pwd () {
  fi
 }
 
+# Docker machine info
+function dockermachine_info () {
+    PS_DOCKER_MACHINE=""
+    if [[ $DOCKER_MACHINE_NAME != "" ]] ; then
+        PS_DOCKER_MACHINE=" ${LIGHT_GRAY}| ${CYAN}$DOCKER_MACHINE_NAME ${LIGHT_GRAY}|"
+    fi
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
   # return value of the last command.
   set_last_action_symbol $?
+
+  dockermachine_info
 
   # Set the BRANCH variable.
   if is_git_repository ; then
@@ -97,7 +107,7 @@ function set_bash_prompt () {
   truncate_pwd
 
   # Set the bash prompt variable.
-  PS1="${COLOR_NONE}[${LIGHT_RED}\u${COLOR_NONE}@${LIGHT_PURPLE}\h${COLOR_NONE}:${LIGHT_BLUE}${newPWD} ${BRANCH}${LIGHT_GRAY}${COLOR_NONE}]\n${COLOR_NONE}$ "
+  PS1="${COLOR_NONE}[${LIGHT_RED}\u${COLOR_NONE}@${LIGHT_PURPLE}\h${COLOR_NONE}:${LIGHT_BLUE}${newPWD}${PS_DOCKER_MACHINE}${BRANCH}${LIGHT_GRAY}${COLOR_NONE}]\n${COLOR_NONE}$ "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
