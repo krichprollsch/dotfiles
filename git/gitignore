@@ -5,3 +5,8 @@ vendor.tags
 .ctrlp
 *.orig
 /core
+.*.sw?
+.DS_Store
+debug.test
+debug
+.coverage.out

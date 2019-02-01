@@ -1,5 +1,7 @@
+[url "git@git.blueboard.io:"]
+    insteadOf="https://git.blueboard.io/"
 [user]
-	email = pierre@wisembly.com
+	email = pierre@blueboard.io
 	name = Pierre Tachoire
 [merge]
 	tool = meld
@@ -29,3 +31,9 @@
 	tool = vimdiff
 [pull]
 	rebase = preserve
+[credential "https://git.blueboard.io"]
+	username = pierre
+[url "git@git.blueboard.io:blueboard/"]
+	insteadOf = bb:
+[url "git@git.blueboard.io:pierre/"]
+	insteadOf = pierre:
