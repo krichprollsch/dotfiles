@@ -69,24 +69,6 @@ autocmd FileType features   setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " load plugins
 source ~/.vimrc.bundles
 
-" Syntastic
-let g:syntastic_auto_loc_list = 1                       " auto open/close the errors list
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_loc_list_height = 5
-"let g:syntastic_quiet_messages = {'level': 'warnings'}  " don't want warnings to be displayed
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args="--report=csv --standard=PSR2 --tab-width=0"
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-
-" go
-let g:go_list_type = "quickfix"
-let g:go_fmt_command = "goimports"
-
 " F5 removes endline spaces
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
@@ -104,9 +86,9 @@ nmap <F7> :NERDTreeToggle<CR>
 
 " ack
 nmap <leader>a :Ack<space>
-
-" start a substitute
-map <leader>s :%Subvert/
+" use ag
+" see https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 " sudo to write
 command W w !sudo tee % > /dev/null
@@ -120,21 +102,6 @@ set pastetoggle=<F2>
 " automatically strip trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" php syntax
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
-
-" Ack with ag
-" see https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-let g:ackprg = 'ag --vimgrep --smart-case'
-
 " fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <silent> <c-p> :FZF<CR>
@@ -144,35 +111,3 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<cr>"
 inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<C-c>"
 inoremap <expr><ENTER> pumvisible() ? "\<C-y>" : "\<cr>"
-
-function! Smart_TabComplete()
-  let line = getline('.')                         " current line
-
-  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
-                                                  " line to one character right
-                                                  " of the cursor
-  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
-  if (strlen(substr)==0)                          " nothing to match on empty string
-    return "\<tab>"
-  endif
-  let has_period = match(substr, '\.') != -1      " position of period, if any
-  let has_slash = match(substr, '\/') != -1       " position of slash, if any
-  if (!has_period && !has_slash)
-    return "\<C-X>\<C-P>"                         " existing text matching
-  elseif ( has_slash )
-    return "\<C-X>\<C-F>"                         " file matching
-  else
-    return "\<C-X>\<C-O>"                         " plugin matching
-  endif
-endfunction
-
-inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<c-r>=Smart_TabComplete()\<CR>"
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php setlocal omnifunc=phpactor#Complete
-
-" phpstan
-let g:phpstan_analyse_level = 7
-

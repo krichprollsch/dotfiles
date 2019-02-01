@@ -37,18 +37,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'stephenmckinney/vim-autotag'
     Plug 'airblade/vim-gitgutter'
     Plug 'StanAngeloff/php.vim'
-    Plug 'stephpy/vim-php-cs-fixer'
     Plug 'scrooloose/nerdtree-git-plugin'
-    Plug 'fatih/vim-go'
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
-    Plug 'phpactor/phpactor', {'do': 'composer install --no-dev', 'for': 'php'}
-    Plug 'phpstan/vim-phpstan'
 
-    " Misc {
-        Plug 'tpope/vim-markdown'
-        Plug 'evidens/vim-twig'
-        Plug 'groenewege/vim-less'
-    " }
+" } Go {
+    Plug 'fatih/vim-go'
+    Plug 'AndrewRadev/splitjoin.vim'
+" }
+
+" } Misc {
+    Plug 'tpope/vim-markdown'
 " }
 
 call plug#end()
