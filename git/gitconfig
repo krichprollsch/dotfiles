@@ -3,6 +3,7 @@
 [user]
 	email = pierre@blueboard.io
 	name = Pierre Tachoire
+	signingkey = B868722B27758E34A6097AF8A387EEA469596030
 [merge]
 	tool = meld
 [color]
@@ -37,3 +38,5 @@
 	insteadOf = bb:
 [url "git@git.blueboard.io:pierre/"]
 	insteadOf = pierre:
+[commit]
+	gpgsign = true
