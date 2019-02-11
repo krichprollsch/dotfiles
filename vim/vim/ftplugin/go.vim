@@ -12,6 +12,9 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 
+" highlight matching ids
+let g:go_auto_sameids = 1
+
 " use 4 space for tab
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
@@ -25,6 +28,8 @@ let g:go_metalinter_autosave = 1
 " and ctrl-t to go back
 
 " use [[ and ]] to jump between func
+
+" use K to open the doc
 
 " if means in func
 " af mean all func
@@ -46,3 +51,4 @@ autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
 autocmd FileType go nmap <leader>t <Plug>(go-test)
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
