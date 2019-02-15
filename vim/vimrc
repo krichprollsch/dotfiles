@@ -1,3 +1,4 @@
+"
 " vim conf - Pierre Tachoire
 " inspired by Vincent Jousse
 
@@ -106,8 +107,24 @@ autocmd BufWritePre * :%s/\s\+$//e
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 nnoremap <silent> <c-p> :FZF<CR>
 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<cr>"
-inoremap <expr><ESC> pumvisible() ? "\<C-e>" : "\<C-c>"
-inoremap <expr><ENTER> pumvisible() ? "\<C-y>" : "\<cr>"
+"use <tab> for completion
+function! TabWrap()
+    if pumvisible()
+        return "\<C-N>"
+    else
+        return "\<C-X>\<C-O>"
+    endif
+endfunction
+
+" power tab
+imap <silent><expr><tab> TabWrap()
+
+" Enter: complete&close popup if visible (so next Enter works); else: break undo
+inoremap <silent><expr> <Cr> pumvisible() ?
+            \ deoplete#mappings#close_popup() : "<C-g>u<Cr>"
+
+" Escape: exit autocompletion, go to Normal mode
+inoremap <silent><expr> <Esc> pumvisible() ? "<C-e><Esc>" : "<Esc>"
+
+" hide doc preview with omnicomplete
+set completeopt-=preview

@@ -40,10 +40,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree-git-plugin'
     Plug 'https://bitbucket.org/cmthornton/vim-dist-ext.git'
 
+" } completion {
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'zchee/deoplete-go'
+
 " } Go {
     Plug 'fatih/vim-go'
     Plug 'AndrewRadev/splitjoin.vim'
-" }
 
 " } Misc {
     Plug 'tpope/vim-markdown'

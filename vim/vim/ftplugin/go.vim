@@ -22,6 +22,7 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
+let g:go_jump_to_error = 0
 let g:go_metalinter_autosave = 1
 
 " use gd to jump to go definition
