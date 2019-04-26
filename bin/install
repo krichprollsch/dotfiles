@@ -68,3 +68,11 @@ fi
 ln -s $CURRENT/ack/ackrc ~/.ackrc
 
 printf "\r\033[2K  [ \033[00;32mOK\033[0m ] ack config installed\n"
+
+if [ -L ~/.config/nvim ] ; then
+    rm -rf ~/.config/nvim
+fi
+
+ln -s $CURRENT/neovim ~/.config/nvim
+
+printf "\r\033[2K  [ \033[00;32mOK\033[0m ] nvim config installed\n"
