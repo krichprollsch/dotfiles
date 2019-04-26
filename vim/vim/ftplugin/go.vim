@@ -19,11 +19,17 @@ let g:go_auto_sameids = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " metalinter
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['govet', 'errcheck', 'deadcode', 'ineffassign', 'structcheck', 'unused', 'varcheck', 'gosimple', 'staticcheck']
+let g:go_metalinter_autosave_enabled = ['errcheck', 'deadcode', 'ineffassign', 'structcheck', 'varcheck']
 let g:go_metalinter_deadline = "5s"
 let g:go_jump_to_error = 0
 let g:go_metalinter_autosave = 1
+let g:go_metalinter_command='golangci-lint'
+
+" use gopls for :GoDef
+let g:go_def_mode='gopls'
+" use gopls for :GoInfo
+let g:go_info_mode='gopls'
 
 " use gd to jump to go definition
 " and ctrl-t to go back
@@ -48,8 +54,9 @@ function! s:build_go_files()
     call go#cmd#Build(0)
   endif
 endfunction
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+nmap <leader>t <Plug>(go-test)
+nmap <Leader>c <Plug>(go-coverage-toggle)
+nmap <Leader>i <Plug>(go-info)
+nmap <Leader>l <Plug>(go-lint)
