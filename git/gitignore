@@ -10,3 +10,4 @@ vendor.tags
 debug.test
 debug
 .coverage.out
+.gometalinter.json
