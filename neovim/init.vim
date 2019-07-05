@@ -111,5 +111,14 @@ endfunction
 " power tab
 imap <silent><expr><tab> TabWrap()
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+" coc
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+function! SetupCommandAbbrs(from, to)
+	exec 'cnoreabbrev <expr> '.a:from
+		\ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
+		\ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfunction
+
+" Use C to open coc config
+call SetupCommandAbbrs('C', 'CocConfig')

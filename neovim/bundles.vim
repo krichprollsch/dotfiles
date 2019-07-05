@@ -29,7 +29,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'scrooloose/nerdtree-git-plugin'
 
 " } completion {
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " } Go {
     Plug 'fatih/vim-go'
