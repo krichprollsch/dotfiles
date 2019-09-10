@@ -40,3 +40,5 @@
 	insteadOf = pierre:
 [commit]
 	gpgsign = true
+[tag]
+	sort = version:refname
