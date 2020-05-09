@@ -1,9 +1,20 @@
 {
-    "languageserver": {
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "➤",
+  "diagnostic.checkCurrentLine": true,
+  "suggest.floatEnable": false,
+  "languageserver": {
     "golang": {
       "command": "gopls",
+      "args": ["-remote=auto"],
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     }
+  },
+  "go.goplsOptions": {
+      "go.goplsArgs": ["-remote=auto"],
+      "go.goplsPath": ["/home/pierre/go/bin/gopls"]
   }
 }

@@ -13,23 +13,17 @@ let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 
 " highlight matching ids
-let g:go_auto_sameids = 1
+"let g:go_auto_sameids = 1
 
 " use 4 space for tab
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
+" debug
+"let g:go_debug = ['shell-commands', 'lsp']
 " metalinter
-let g:go_metalinter_enabled = ['govet', 'errcheck', 'deadcode', 'ineffassign', 'structcheck', 'unused', 'varcheck', 'gosimple', 'staticcheck']
-let g:go_metalinter_autosave_enabled = ['errcheck', 'deadcode', 'ineffassign', 'structcheck', 'varcheck']
-let g:go_metalinter_deadline = "5s"
 let g:go_jump_to_error = 0
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_command='golangci-lint'
-
-" use gopls for :GoDef
-let g:go_def_mode='gopls'
-" use gopls for :GoInfo
-let g:go_info_mode='gopls'
+let g:go_metalinter_deadline = '10s'
 
 " use gd to jump to go definition
 " and ctrl-t to go back
@@ -60,3 +54,11 @@ nmap <leader>t <Plug>(go-test)
 nmap <Leader>c <Plug>(go-coverage-toggle)
 nmap <Leader>i <Plug>(go-info)
 nmap <Leader>l <Plug>(go-lint)
+
+" only one gopls
+" see https://github.com/fatih/vim-go/issues/2760#issuecomment-596074572
+let g:go_gopls_enabled = 1
+let g:go_gopls_options = ['-remote=auto']
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_referrers_mode = 'gopls'

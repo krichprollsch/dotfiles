@@ -44,12 +44,6 @@ let g:loaded_matchparen= 0
 " always replace all occurences of a line
 set gdefault
 
-" Tabs and indentation
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
 " Desactiver les touches directionnelles
 map <up> <nop>
 map <down> <nop>
@@ -73,6 +67,7 @@ autocmd FileType js         setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType yml        setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType toml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType features   setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType json       setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " fzf
 let g:fzf_history_dir = '~/.local/share/fzf-history'

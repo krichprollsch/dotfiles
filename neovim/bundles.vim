@@ -12,16 +12,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-commentary'
 
-" } General {
-    Plug 'scrooloose/nerdtree'
-    Plug 'altercation/vim-colors-solarized'
-    Plug 'jistr/vim-nerdtree-tabs'
-    Plug 'mbbill/undotree'
-    Plug 'tpope/vim-abolish'
-    Plug 'tpope/vim-fugitive'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'itchyny/lightline.vim'
-
 " } Prog {
     Plug 'scrooloose/nerdcommenter'
     Plug 'stephenmckinney/vim-autotag'
@@ -32,11 +22,24 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " } Go {
-    Plug 'fatih/vim-go'
+    Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
     Plug 'AndrewRadev/splitjoin.vim'
+
+" } Rust {
+    Plug 'rust-lang/rust.vim'
 
 " } Misc {
     Plug 'tpope/vim-markdown'
+
+" } General {
+    Plug 'scrooloose/nerdtree'
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'mbbill/undotree'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-fugitive'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'itchyny/lightline.vim'
 " }
 
 call plug#end()
