@@ -126,9 +126,13 @@ export EDITOR='vim'
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
+# https://tip.golang.org/cmd/go/#hdr-Module_downloading_and_verification
+export GOPRIVATE=git.blueboard.io
 
 # disable caps_lock
 setxkbmap -option caps:none
+# us-intl with dead keys
+setxkbmap -rules evdev -model pc105 -layout us -variant altgr-intl
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
