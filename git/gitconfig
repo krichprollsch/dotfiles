@@ -1,9 +1,9 @@
 [url "git@git.blueboard.io:"]
     insteadOf="https://git.blueboard.io/"
 [user]
-	email = pierre@blueboard.io
+	email = pierre.tachoire@channeladvisor.com
 	name = Pierre Tachoire
-	signingkey = B868722B27758E34A6097AF8A387EEA469596030
+	signingkey = A387EEA469596030
 [merge]
 	tool = meld
 [color]
