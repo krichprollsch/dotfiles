@@ -16,7 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'scrooloose/nerdcommenter'
     Plug 'stephenmckinney/vim-autotag'
     "Plug 'airblade/vim-gitgutter'
-    Plug 'scrooloose/nerdtree-git-plugin'
+    "Plug 'scrooloose/nerdtree-git-plugin'
 
 " } completion {
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
