@@ -28,6 +28,8 @@
     noffdrop = !sh -c 'git noffm $2 && git push $1 master && git drop $1 $2' -
     rbpush = !sh -c 'git fetch $1 && git checkout $2 && git pull $1 $2 && git rebase master && git push -f $1 $2 && git checkout master' -
     fpush = !sh -c 'git push -f $1 $2' -
+	go-version = "!f(){ TZ=UTC git log -1 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h' \"$@\" ;};f"
+	go-shortlog = "!f(){ TZ=UTC git log -10 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h %s' \"$@\" ;};f"
 [diff]
 	tool = vimdiff
 [pull]
