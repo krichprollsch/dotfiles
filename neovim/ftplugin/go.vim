@@ -57,7 +57,7 @@ nmap <Leader>l <Plug>(go-lint)
 
 " only one gopls
 " see https://github.com/fatih/vim-go/issues/2760#issuecomment-596074572
-let g:go_gopls_enabled = 1
+let g:go_gopls_enabled = 0
 let g:go_gopls_options = ['-remote=auto']
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
