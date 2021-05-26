@@ -28,6 +28,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " } Rust {
     Plug 'rust-lang/rust.vim'
 
+" } DB {
+    Plug 'kezhenxu94/vim-mysql-plugin'
+
 " } Misc {
     Plug 'tpope/vim-markdown'
 

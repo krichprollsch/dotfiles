@@ -16,20 +16,26 @@
 [core]
 	editor = vi
 	excludesfile = ~/.gitignore
+	# https://github.com/dandavison/delta
+	# pager = delta
+# https://github.com/dandavison/delta
+[delta]
+	plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    navigate = true
+    features = line-numbers decorations
+    syntax-theme = Monokai Extended
+[interactive]
+	# https://github.com/dandavison/delta
+	diffFilter = delta --color-only
 [alias]
 	slog = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)    %an%Creset' --abbrev-commit
-	lg = log --name-only
 	st = status
 	stu = status -u
-	ffm = merge --ff-only
-	noffm = merge --no-ff
-    drop = !sh -c 'git branch -d $2 && git push $1 :${2}' -
-    ffdrop = !sh -c 'git ffm $2 && git push $1 master && git drop $1 $2' -
-    noffdrop = !sh -c 'git noffm $2 && git push $1 master && git drop $1 $2' -
-    rbpush = !sh -c 'git fetch $1 && git checkout $2 && git pull $1 $2 && git rebase master && git push -f $1 $2 && git checkout master' -
-    fpush = !sh -c 'git push -f $1 $2' -
 	go-version = "!f(){ TZ=UTC git log -1 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h' \"$@\" ;};f"
 	go-shortlog = "!f(){ TZ=UTC git log -10 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h %s' \"$@\" ;};f"
+	tagg = "!git --no-pager tag"
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [diff]
 	tool = vimdiff
 [pull]
@@ -44,3 +50,6 @@
 	gpgsign = true
 [tag]
 	sort = version:refname
+	pager = diff
+[branch]
+	sort = -committerdate

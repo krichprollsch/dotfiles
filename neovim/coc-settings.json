@@ -8,5 +8,6 @@
   "languageserver": {
   },
   "go.goplsArgs": ["-remote", "auto"],
-  "go.goplsPath": "/home/pierre/go/bin/gopls"
+  "go.goplsPath": "/home/pierre/go/bin/gopls",
+  "yaml.format.enable": true
 }
