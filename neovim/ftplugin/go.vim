@@ -19,10 +19,10 @@ let g:go_highlight_extra_types = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 
 " debug
-"let g:go_debug = ['shell-commands', 'lsp']
+" let g:go_debug = ['shell-commands']
 " metalinter
 let g:go_jump_to_error = 0
-let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave = 0
 let g:go_metalinter_deadline = '10s'
 
 " use gd to jump to go definition

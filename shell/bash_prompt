@@ -81,11 +81,20 @@ function truncate_pwd () {
  fi
 }
 
-# Docker machine info
-function dockermachine_info () {
-    PS_DOCKER_MACHINE=""
+# Docker info
+function docker_info () {
+    PS_DOCKER=""
+
+    if [[ $DOCKER_CONTEXT != "" ]] ; then
+        PS_DOCKER=" ${LIGHT_GRAY}| ${CYAN}$DOCKER_CONTEXT ${LIGHT_GRAY}|"
+    fi
+
+    if [[ $DOCKER_HOST != "" ]] ; then
+        PS_DOCKER=" ${LIGHT_GRAY}| ${CYAN}$DOCKER_HOST ${LIGHT_GRAY}|"
+    fi
+
     if [[ $DOCKER_MACHINE_NAME != "" ]] ; then
-        PS_DOCKER_MACHINE=" ${LIGHT_GRAY}| ${CYAN}$DOCKER_MACHINE_NAME ${LIGHT_GRAY}|"
+        PS_DOCKER=" ${LIGHT_GRAY}| ${CYAN}$DOCKER_MACHINE_NAME ${LIGHT_GRAY}|"
     fi
 }
 
@@ -95,7 +104,7 @@ function set_bash_prompt () {
   # return value of the last command.
   set_last_action_symbol $?
 
-  dockermachine_info
+  docker_info
 
   # Set the BRANCH variable.
   if is_git_repository ; then
@@ -107,7 +116,7 @@ function set_bash_prompt () {
   truncate_pwd
 
   # Set the bash prompt variable.
-  PS1="${COLOR_NONE}[${LIGHT_RED}\u${COLOR_NONE}@${LIGHT_PURPLE}\h${COLOR_NONE}:${LIGHT_BLUE}${newPWD}${PS_DOCKER_MACHINE}${BRANCH}${LIGHT_GRAY}${COLOR_NONE}]\n${COLOR_NONE}$ "
+  PS1="${COLOR_NONE}[${LIGHT_RED}\u${COLOR_NONE}@${LIGHT_PURPLE}\h${COLOR_NONE}:${LIGHT_BLUE}${newPWD}${PS_DOCKER}${BRANCH}${LIGHT_GRAY}${COLOR_NONE}]\n${COLOR_NONE}$ "
 }
 
 # Tell bash to execute this function just before displaying its prompt.

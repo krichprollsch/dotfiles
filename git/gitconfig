@@ -34,12 +34,12 @@
 	stu = status -u
 	go-version = "!f(){ TZ=UTC git log -1 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h' \"$@\" ;};f"
 	go-shortlog = "!f(){ TZ=UTC git log -10 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h %s' \"$@\" ;};f"
-	tagg = "!git --no-pager tag"
+	tagg = "!git --no-pager tag --sort committerdate"
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [diff]
 	tool = vimdiff
 [pull]
-	rebase = preserve
+	rebase = merges
 [credential "https://git.blueboard.io"]
 	username = pierre
 [url "git@git.blueboard.io:blueboard/"]
@@ -53,3 +53,5 @@
 	pager = diff
 [branch]
 	sort = -committerdate
+[init]
+	defaultBranch = master
