@@ -132,9 +132,11 @@ export GO111MODULE=on
 export GOPRIVATE=git.blueboard.io
 
 # disable caps_lock
-setxkbmap -option caps:none
+# It doesn't work with wayland.
+# I found https://superuser.com/a/1209093 instead.
+# setxkbmap -option caps:none
 # us-intl with dead keys
-setxkbmap -rules evdev -model pc105 -layout us -variant altgr-intl
+# setxkbmap -rules evdev -model pc105 -layout us -variant altgr-intl
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
@@ -143,7 +145,7 @@ export BROWSER=/usr/bin/firefox
 
 # use fd with fzf
 # see https://github.com/sharkdp/fd#using-fd-with-fzf
-export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git --color=always'
+export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --exclude .git --color=always'
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 . "$HOME/.cargo/env"
