@@ -18,6 +18,8 @@ set hidden		" hide file while opening other files
 set nobackup
 set nowritebackup
 set noswapfile
+" disable mouse
+set mouse=
 
  " backspace as usual
  set backspace=indent,eol,start
