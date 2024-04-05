@@ -9,6 +9,7 @@ if [ -L ~/.gitconfig ] ; then
 fi
 
 ln -s $CURRENT/git/gitconfig ~/.gitconfig
+ln -s $CURRENT/git/lpd.gitconfig ~/.lpd.gitconfig
 
 if [ -L ~/.gitignore ] ; then
     rm -rf ~/.gitignore
