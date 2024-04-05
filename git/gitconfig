@@ -1,9 +1,11 @@
+[url "git@github.com:"]
+    insteadOf="https://github.com/"
 [url "git@git.blueboard.io:"]
     insteadOf="https://git.blueboard.io/"
 [user]
-	email = pierre.tachoire@channeladvisor.com
+	email = pierre@tch.re
 	name = Pierre Tachoire
-	signingkey = A387EEA469596030
+	signingkey = 2F81C4E13A61D100F062AA8AEC78D00E3E959821
 [merge]
 	tool = meld
 [color]
@@ -36,6 +38,8 @@
 	go-shortlog = "!f(){ TZ=UTC git log -10 '--date=format-local:%Y%m%d%H%M%S' --abbrev=12 '--pretty=tformat:v0.0.0-%cd-%h %s' \"$@\" ;};f"
 	tagg = "!git --no-pager tag --sort committerdate"
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	configlpd = "!git config user.signingkey 9DAF3A79F6C845B6783FF1A3B731C47CF5C2C92D; git config user.email pierre@lightpanda.io"
+	configprs = "!git config user.signingkey 2F81C4E13A61D100F062AA8AEC78D00E3E959821; git config user.email pierre@tch.re"
 [diff]
 	tool = vimdiff
 [pull]
@@ -55,3 +59,10 @@
 	sort = -committerdate
 [init]
 	defaultBranch = master
+[rerere]
+	enabled = true
+[sendemail]
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpUser = pierre@lightpanda.io
+	smtpServerPort = 587

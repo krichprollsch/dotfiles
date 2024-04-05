@@ -129,7 +129,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
 # https://tip.golang.org/cmd/go/#hdr-Module_downloading_and_verification
-export GOPRIVATE=git.blueboard.io
 
 # disable caps_lock
 # It doesn't work with wayland.

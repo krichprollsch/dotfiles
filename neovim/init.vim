@@ -111,6 +111,10 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
+" enable coc node debug mode
+" let g:node_client_debug = 1
+" let $NODE_CLIENT_LOG_FILE = '/tmp/coc.log'
+
 " use tab for completion
 " see https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-or-custom-key-for-trigger-completion
 " use <tab> for trigger completion and navigate to the next complete item
