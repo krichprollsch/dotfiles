@@ -20,6 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " } completion {
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/jsonc.vim',
 
 " } Go {
     Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}

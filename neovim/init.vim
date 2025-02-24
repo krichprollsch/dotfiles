@@ -93,9 +93,6 @@ source ~/.config/nvim/bundles.vim
 " nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
-" automatically strip trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
-
 " json
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
@@ -143,6 +140,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" split + go to definition
+nmap <silent> gh <cmd>split<cr><Plug>(coc-definition)
 
 " Use U to show documentation in preview window
 nnoremap <silent> U :call <SID>show_documentation()<CR>

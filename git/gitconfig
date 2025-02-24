@@ -62,3 +62,5 @@
 	path = ~/.lpd.gitconfig
 [includeIf "gitdir:~/wrk/**"]
 	path = ~/.lpd.gitconfig
+[includeIf "gitdir:~/go/src/github.com/lightpanda-io/**"]
+	path = ~/.lpd.gitconfig
