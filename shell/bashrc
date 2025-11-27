@@ -137,14 +137,30 @@ export GO111MODULE=on
 # us-intl with dead keys
 # setxkbmap -rules evdev -model pc105 -layout us -variant altgr-intl
 
-export PATH=$PATH:$HOME/.composer/vendor/bin
-
 export PATH="$HOME/.yarn/bin:$PATH"
 export BROWSER=/usr/bin/firefox
+
+# node
+export PATH="/usr/lib/node/bin:$PATH"
 
 # use fd with fzf
 # see https://github.com/sharkdp/fd#using-fd-with-fzf
 export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --exclude .git --color=always'
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-. "$HOME/.cargo/env"
+
+#. "$HOME/.cargo/env"
+
+# flyi.io
+export FLYCTL_INSTALL="$HOME/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export PATH=$HOME/.local/bin:$PATH
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# lightpanda
+export LIGHTPANDA_DISABLE_TELEMETRY=true
+
+alias claude="/home/pierre/.claude/local/claude"
