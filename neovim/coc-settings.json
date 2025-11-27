@@ -8,17 +8,28 @@
   "diagnostic.checkCurrentLine": true,
   "suggest.floatEnable": false,
 
-  "languageserver": {},
+  "languageserver": {
+    "zls": {
+      "filetypes": [ "zig", "zon" ],
+      "command": "/usr/local/bin/zls"
+    },
+    "settings": {
+      "zls.zig_exe_path": "/usr/local/bin/zig"
+    }
+  },
 
   "go.goplsArgs": ["-remote", "auto"],
   "go.goplsPath": "/home/pierre/go/bin/gopls",
 
   "yaml.format.enable": true,
 
-  "rust-analyzer.enable": true,
-
   "zig.enabled": true,
   "zig.startUpMessage": true,
   "zig.path": "zls",
   "zig.debugLog": false,
+
+  "[zig]": {
+    "coc.preferences.formatOnSave": true,
+    "semanticTokens.enable": true
+  }
 }

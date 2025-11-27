@@ -21,11 +21,11 @@ set noswapfile
 " disable mouse
 set mouse=
 
- " backspace as usual
- set backspace=indent,eol,start
+" backspace as usual
+set backspace=indent,eol,start
 
- syntax enable
- set background=dark
+syntax enable
+set background=dark
 
 filetype on
 " ~/.config/nvim/ftplugin

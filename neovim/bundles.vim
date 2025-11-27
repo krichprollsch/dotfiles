@@ -30,7 +30,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'rust-lang/rust.vim'
 
 " } Zig {
-    Plug 'ziglang/zig.vim'
+    Plug 'https://codeberg.org/ziglang/zig.vim.git'
 
 " } DB {
     Plug 'kezhenxu94/vim-mysql-plugin'
