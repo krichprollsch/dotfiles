@@ -12,3 +12,6 @@ debug
 .coverage.out
 .gometalinter.json
 .obsidian
+.claude/*
+.crush/*
+CRUSH.md

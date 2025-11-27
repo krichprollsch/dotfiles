@@ -4,6 +4,8 @@
 	email = pierre@tch.re
 	name = Pierre Tachoire
 	signingkey = 2F81C4E13A61D100F062AA8AEC78D00E3E959821
+[column]
+        ui = auto
 [merge]
 	tool = meld
 [color]
@@ -37,7 +39,14 @@
 	tagg = "!git --no-pager tag --sort committerdate"
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [diff]
-	tool = vimdiff
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [pull]
 	rebase = merges
 [commit]
@@ -48,9 +57,10 @@
 [branch]
 	sort = -committerdate
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [rerere]
 	enabled = true
+	autoupdate = true
 [sendemail]
 	smtpEncryption = tls
 	smtpServer = smtp.gmail.com
